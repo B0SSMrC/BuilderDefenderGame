@@ -6,7 +6,7 @@ public class CameraHandler : MonoBehaviour
 {
     public static CameraHandler Instance{get; private set;}
     [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
-
+    
     private float orthographicSize;
     private float targetOrthographicSize;
     private bool edgeScrolling;
@@ -15,7 +15,7 @@ public class CameraHandler : MonoBehaviour
     {
         Instance = this;
 
-        edgeScrolling = PlayerPrefs.GetInt("edgeScrolling", 1) == 1;
+        edgeScrolling = PlayerPrefs.GetInt("edgeScrolling", 0) == 1;
     }
     private void Start()
     {
@@ -74,9 +74,18 @@ public class CameraHandler : MonoBehaviour
         cinemachineVirtualCamera.m_Lens.OrthographicSize =orthographicSize;
     }
 
-    public void SetEdgeScrolling(bool edgeScrolling)
+    public void SetEdgeScrolling()
     {
-        this.edgeScrolling = edgeScrolling;
+        if (edgeScrolling)
+        {
+            edgeScrolling = false;
+            TooltipUI.Instance.Show("已关闭边缘滚动功能" , new TooltipUI.TooltipTimer{timer = 1.5f});
+        }
+        else
+        {
+            edgeScrolling = true;
+            TooltipUI.Instance.Show("已开启边缘滚动功能" , new TooltipUI.TooltipTimer{timer = 1.5f});
+        }
         PlayerPrefs.SetInt("edgeScrolling", edgeScrolling ? 1 : 0);
     }
     public bool GetEdgeScrolling()

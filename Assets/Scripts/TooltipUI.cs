@@ -57,7 +57,7 @@ public class TooltipUI : MonoBehaviour
         textMeshPro.ForceMeshUpdate();
 
         Vector2 textSize = textMeshPro.GetRenderedValues(false);
-        Vector2 padding = new Vector2(8,8);
+        Vector2 padding = new Vector2(0,0);
         backgroundRectTransform.sizeDelta= textSize + padding;
     }
 

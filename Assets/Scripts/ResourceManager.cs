@@ -33,14 +33,6 @@ public class ResourceManager : MonoBehaviour
 
     
 
-    private void TestLogResourceAmountDictionary()
-    {
-        foreach(ResourceTypeSO resourceType in resourceAmountDictionary.Keys)
-        {
-            Debug.Log(resourceType.nameString + ": " + resourceAmountDictionary[resourceType]);
-        }
-    }
-
     public void AddResource(ResourceTypeSO resourceType,int amount)
     {
         resourceAmountDictionary[resourceType] += amount;
@@ -79,5 +71,33 @@ public class ResourceManager : MonoBehaviour
             
         }
          
+    }
+
+    //导出资源用于存档
+    public List<ResourceSaveData> GetResourceSaveData()
+    {
+        List<ResourceSaveData> saveList = new List<ResourceSaveData>();
+        foreach (var kvp in resourceAmountDictionary)
+        {
+            saveList.Add(new ResourceSaveData { resourceName = kvp.Key.name, amount = kvp.Value });
+        }
+        return saveList;
+    }
+
+    // 【新增】读档时覆盖资源数据
+    public void LoadResourceData(List<ResourceSaveData> saveList)
+    {
+        ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
+        
+        foreach (ResourceSaveData saveData in saveList)
+        {
+            // 通过名字找到对应的 SO
+            ResourceTypeSO typeSO = resourceTypeList.list.Find(so => so.name == saveData.resourceName);
+            if (typeSO != null)
+            {
+                resourceAmountDictionary[typeSO] = saveData.amount;
+            }
+        }
+        OnResurceAmountChanged?.Invoke(this, EventArgs.Empty);
     }
 }

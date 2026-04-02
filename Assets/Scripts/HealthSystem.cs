@@ -81,5 +81,10 @@ public class HealthSystem : MonoBehaviour
         OnHealthAmountMaxChanged?.Invoke(this,EventArgs.Empty);
     }
 
-
+    //用于读档时设置当前血量
+    public void SetHealthAmount(int amount)
+    {
+        healthAmount = Mathf.Clamp(amount,0,healthAmountMax);
+        OnDamaged?.Invoke(this,EventArgs.Empty);
+    }
 }

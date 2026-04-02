@@ -93,4 +93,17 @@ public class EnemyWaveManager : MonoBehaviour
     {
         return spawnPosition;
     }
+
+    //用于读档时覆盖波次状态
+    public void LoadWaveData(int waveNum, float nextTimer,Vector3 spawnPos)
+    {
+        this.waveNumber = waveNum;
+        this.nextWaveSpawnTimer = nextTimer;
+        this.spawnPosition = spawnPos;
+        this.nextWavePositionTransform.position = spawnPosition;
+        
+        // 强制重置为等待状态，避免读档时处于刷怪中导致逻辑错乱
+        state = State.WaitingToSpawnNextWave; 
+        OnWaveNumberChanged?.Invoke(this, EventArgs.Empty);
+    }
 }
