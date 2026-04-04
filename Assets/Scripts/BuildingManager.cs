@@ -35,10 +35,12 @@ public class BuildingManager : MonoBehaviour
         hqBuilding.GetComponent<HealthSystem>().OnDied += HQ_OnDied;
     }
 
+    //总部被摧毁
     private void HQ_OnDied(object sender, EventArgs e)
     {
         SoundManager.Instance.PlaySound(SoundManager.Sound.GameOver);
         GameOverUI.Instance.Show();
+        CloudLeaderboardManager.Instance.SubmitWaveScore(EnemyWaveManager.Instance.GetWaveNumber());
     }
 
     private void Update()

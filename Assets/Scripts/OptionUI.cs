@@ -77,13 +77,18 @@ public class OptionUI : MonoBehaviour
     {
         gameObject.SetActive(!gameObject.activeSelf);
 
-        if (gameObject.activeSelf)
+        // 检查面板当前是打开还是关闭状态
+        bool isPanelActive = gameObject.activeSelf;
+
+        if (TimeSpeedManager.Instance != null)
         {
-            Time.timeScale = 0f;
+            // 把暂停大权交给 TimeSpeedManager 处理
+            TimeSpeedManager.Instance.SetGamePaused(isPanelActive);
         }
         else
         {
-            Time.timeScale = 1f;
+            // 兜底逻辑（防止你在其他场景单独测试时报错）
+            Time.timeScale = isPanelActive ? 0f : 1f;
         }
     }
 
