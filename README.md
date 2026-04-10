@@ -23,8 +23,11 @@
 ## 🎮 核心玩法
 
 1. **资源采集**：开采周围的矿产和树木，积累你的原始资本。
+- ![Image](https://github.com/user-attachments/assets/3772264c-e5fc-4eec-b5be-585a18b8cdaa)
 2. **阵地建设**：合理规划你的炮塔位置，打造铜墙铁壁。
+- ![Image](https://github.com/user-attachments/assets/030c3cad-affb-4052-b4ed-035e1f1dc853)
 3. **迎击强敌**：随着波数增加，敌人会越来越强，及时扩展你的防御塔并修复破损的防御塔！
+- ![Image](https://github.com/user-attachments/assets/694a0a64-c25d-4aa2-b9e2-59bb85967558)
 
 ---
 
