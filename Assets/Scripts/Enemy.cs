@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,31 +8,42 @@ public class Enemy : MonoBehaviour
 {
     public static Enemy Create(Vector3 position)
     {
-        
-        Transform enemyTransform = Instantiate(GameAssets.Instance.pfEnemy,position,Quaternion.identity);
-
-        Enemy enemy = enemyTransform.GetComponent<Enemy>();
-        return enemy;
+       return EnemyPool.Instance.Get(position);
     }
     private Rigidbody2D rigidbody2d;
     private Transform targetTransform;
     private HealthSystem healthSystem;
     private float lookForTargetTimer;
     private float lookForTargetTimerMax = 0.2f;
-    private void Start()
+
+    private void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        if(BuildingManager.Instance.GetHQBuilding() != null)
-        {
-            targetTransform = BuildingManager.Instance.GetHQBuilding().transform;
-        }
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.OnDamaged += HealthSystem_OnDamaged;
         healthSystem.OnDied += HealthSystem_OnDied;
 
-        lookForTargetTimer = Random.Range(0f,lookForTargetTimerMax);
     }
 
+    public void Init()
+    {
+        //重置目标
+        if(BuildingManager.Instance.GetHQBuilding() != null)
+        {
+            targetTransform = BuildingManager.Instance.GetHQBuilding().transform;
+        }
+        else
+        {
+            targetTransform = null;
+        }
+
+        //满血复活
+        healthSystem.HealFull();
+
+        //重置物理速度和计时器
+        rigidbody2d.velocity = Vector2.zero;
+        lookForTargetTimer = Random.Range(0f,lookForTargetTimerMax);
+    }
     
 
     private void Update()
@@ -50,8 +62,9 @@ public class Enemy : MonoBehaviour
     {
         SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
         Instantiate(GameAssets.Instance.pfEnemyDieParticles, transform.position,Quaternion.identity);
-        Destroy(gameObject);
         ChromaticAberrationEffect.Instance.SetWeight(0.4f);
+        //回收入池
+        EnemyPool.Instance.Release(this);
     }
 
     

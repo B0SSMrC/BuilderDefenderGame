@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: -4216369217582991585}
   - component: {fileID: -2698907723981909281}
   - component: {fileID: 3441470128147575229}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pfHQ
   m_TagString: Untagged
   m_Icon: {fileID: 0}

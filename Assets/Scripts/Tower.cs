@@ -37,7 +37,7 @@ public class Tower : MonoBehaviour
         if(shootTimer <= 0f)
         {
             shootTimer += shootTimerMax;
-            if(targetEnemy != null)
+            if(targetEnemy != null && targetEnemy.gameObject.activeSelf)
             {
                 ArrowProjectile.Create(projectileSpawnPosition,targetEnemy);
             }
@@ -49,10 +49,16 @@ public class Tower : MonoBehaviour
         float targetMaxRadius = 40f;
         Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(transform.position , targetMaxRadius);
 
+        // 如果当前瞄准的目标已经被回收了，清空目标
+        if (targetEnemy != null && !targetEnemy.gameObject.activeSelf)
+        {
+            targetEnemy = null;
+        }
+
         foreach(Collider2D collider2D in collider2DArray)
         {
             Enemy enemy = collider2D.GetComponent<Enemy>();
-            if(enemy != null)
+            if(enemy != null && enemy.gameObject.activeSelf)
             {
                 if(targetEnemy == null)
                 {

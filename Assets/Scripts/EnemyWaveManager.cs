@@ -11,10 +11,14 @@ public class EnemyWaveManager : MonoBehaviour
     {
         WaitingToSpawnNextWave,
         SpawningWave,
+        LevelCompleted //完成当前波次
     }
-
+    [Header("关卡数据配置")]
+    public LevelConfigSO currentLevelConfig;
+    [Header("生成点配置")]
     [SerializeField] private List<Transform> spawnPositionTransformList;
     [SerializeField] private Transform nextWavePositionTransform;
+
     private State state;
     private int waveNumber = 0;
     private float nextWaveSpawnTimer;
@@ -28,15 +32,21 @@ public class EnemyWaveManager : MonoBehaviour
     }
     private void Start()
     {
+        if (currentLevelConfig == null)
+        {
+            Debug.LogError("错误：没有为 EnemyWaveManager 配置 LevelConfigSO！");
+            return;
+        }
         state = State.WaitingToSpawnNextWave;
-        spawnPosition = spawnPositionTransformList[UnityEngine.Random.Range(0,spawnPositionTransformList.Count)].position;
+        spawnPosition = GetRandomSpawnPosition();
         nextWavePositionTransform.position = spawnPosition;
-        nextWaveSpawnTimer = 3f;
+        nextWaveSpawnTimer = currentLevelConfig.initialWaitTime;
         
     }
 
     private void Update()
     {
+        if(currentLevelConfig == null) return;
         switch (state)
         {
             case State.WaitingToSpawnNextWave:
@@ -52,19 +62,21 @@ public class EnemyWaveManager : MonoBehaviour
                     nextEnemySpawnTimer -= Time.deltaTime;
                     if(nextEnemySpawnTimer < 0f)
                     {
-                        nextEnemySpawnTimer = UnityEngine.Random.Range(0f,.2f);
+                        //读取当前波次生成间隔
+                        float currentSpawnInterval = currentLevelConfig.waves[waveNumber -1].spawnInterval;
+                        nextEnemySpawnTimer = currentSpawnInterval;
                         Enemy.Create(spawnPosition + UtilsClass.GetRandomDir() * UnityEngine.Random.Range(0f,10f));
                         remainingEnemySpawnAmount--;
                         if(remainingEnemySpawnAmount <= 0)
                         {
-                            // 怪物全部生成完毕，进入等待下一波的状态
-                            state = State.WaitingToSpawnNextWave;
-                            spawnPosition = spawnPositionTransformList[UnityEngine.Random.Range(0,spawnPositionTransformList.Count)].position;
-                            nextWavePositionTransform.position = spawnPosition;
-                            nextWaveSpawnTimer = 10f;
+                            PrepareNextWave();
                         }
                     }
                 }
+                break;
+
+            case State.LevelCompleted:
+                //TODO:出发胜利UI
                 break;
         }
     }
@@ -73,26 +85,37 @@ public class EnemyWaveManager : MonoBehaviour
     {
         
         
-        remainingEnemySpawnAmount = 3 + 6 * waveNumber;
+        remainingEnemySpawnAmount = currentLevelConfig.waves[waveNumber].enemyCount;
         state = State.SpawningWave;
         waveNumber++;
         OnWaveNumberChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    public int GetWaveNumber()
+    private void PrepareNextWave()
     {
-        return waveNumber;
+        if(waveNumber >= currentLevelConfig.waves.Count)
+        {
+            Debug.Log("所有波次生成完毕！等待场上怪物被清空即可胜利！");
+            state = State.LevelCompleted;
+            return;
+        }
+
+        nextWaveSpawnTimer = currentLevelConfig.waves[waveNumber - 1].timeToNextWave;
+
+        state = State.WaitingToSpawnNextWave;
+        spawnPosition = GetRandomSpawnPosition();
+        nextWavePositionTransform.position = spawnPosition;
     }
 
-    public float GetNextWaveSpawnTimer()
+    private Vector3 GetRandomSpawnPosition()
     {
-        return nextWaveSpawnTimer;
+        return spawnPositionTransformList[UnityEngine.Random.Range(0, spawnPositionTransformList.Count)].position;
     }
 
-    public Vector3 GetSpawnPosition()
-    {
-        return spawnPosition;
-    }
+
+    public int GetWaveNumber() => waveNumber;
+    public float GetNextWaveSpawnTimer() => nextWaveSpawnTimer;
+    public Vector3 GetSpawnPosition() => spawnPosition;
 
     //用于读档时覆盖波次状态
     public void LoadWaveData(int waveNum, float nextTimer,Vector3 spawnPos)

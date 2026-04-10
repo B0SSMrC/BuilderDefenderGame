@@ -4926,7 +4926,7 @@ GameObject:
   - component: {fileID: 4654595724146479439}
   - component: {fileID: 2563048919402405427}
   - component: {fileID: -656021602008654594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pfArrowProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
