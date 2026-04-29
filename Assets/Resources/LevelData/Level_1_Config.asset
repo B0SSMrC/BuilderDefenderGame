@@ -15,8 +15,8 @@ MonoBehaviour:
   levelName: "\u9ED8\u8BA4\u5173\u5361"
   initialWaitTime: 3
   waves:
-  - enemyCount: 5
-    spawnInterval: 0.1
+  - enemyCount: 500
+    spawnInterval: 0.01
     timeToNextWave: 10
   - enemyCount: 7
     spawnInterval: 0.1

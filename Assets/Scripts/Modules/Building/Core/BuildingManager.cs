@@ -40,7 +40,16 @@ public class BuildingManager : MonoBehaviour
     {
         SoundManager.Instance.PlaySound(SoundManager.Sound.GameOver);
         GameOverUI.Instance.Show();
-        CloudLeaderboardManager.Instance.SubmitWaveScore(EnemyWaveManager.Instance.GetWaveNumber());
+
+        // 增加判空保护，防止单独测试场景时找不到该实例
+        if (CloudLeaderboardManager.Instance != null)
+        {
+            CloudLeaderboardManager.Instance.SubmitWaveScore(EnemyWaveManager.Instance.GetWaveNumber());
+        }
+        else
+        {
+            Debug.LogWarning("CloudLeaderboardManager 实例不存在，跳过分数上传。");
+        }
     }
 
     private void Update()
