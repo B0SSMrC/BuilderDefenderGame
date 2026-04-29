@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Serialization;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,6 +6,12 @@ public class Enemy : MonoBehaviour
     {
        return EnemyPool.Instance.Get(position);
     }
+
+    [Header("索敌设置")]
+    [SerializeField] private float targetMaxRadius = 10f;
+    [SerializeField] private LayerMask buildingLayerMask;
+    private Collider2D[] colliderBuffer = new Collider2D[50];
+
     private Rigidbody2D rigidbody2d;
     private Transform targetTransform;
     private HealthSystem healthSystem;
@@ -105,36 +107,48 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void LookForTargets()
-    {
-        float targetMaxRadius = 10f;
-        Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(transform.position , targetMaxRadius);
 
-        foreach(Collider2D collider2D in collider2DArray)
+
+private void LookForTargets()
+{
+    // 1. 使用 NonAlloc 版本：把扫到的结果填入 colliderBuffer，而不是创建新数组。
+    // hitCount 返回的是实际扫到了几个物体
+    int hitCount = Physics2D.OverlapCircleNonAlloc(transform.position, targetMaxRadius, colliderBuffer, buildingLayerMask);
+
+    targetTransform = null; // 每次索敌前清空目标
+    float closestDistanceSqr = float.MaxValue; // 记录当前发现的最短距离
+    Vector3 currentPosition = transform.position; // 缓存自身坐标，减少跨 C++/C# 底层调用
+
+    // 2. 只遍历实际扫到的数量
+    for (int i = 0; i < hitCount; i++)
+    {
+        Collider2D collider2D = colliderBuffer[i];
+        
+        Building building = collider2D.GetComponent<Building>();
+        if (building != null)
         {
-            Building building = collider2D.GetComponent<Building>();
-            if(building != null)
+            // 3. 计算新目标的距离
+            float distanceToNewSqr = (currentPosition - building.transform.position).sqrMagnitude;
+
+            // 4. 如果比记录的最短距离还要短，就更新目标和最短距离
+            if (distanceToNewSqr < closestDistanceSqr)
             {
-                if(targetTransform == null)
-                {
-                    targetTransform = building.transform;
-                }
-                else
-                {
-                    if(Vector3.Distance(transform.position,building.transform.position) <
-                       Vector3.Distance(transform.position, targetTransform.position))
-                    {
-                        targetTransform = building.transform;
-                    }
-                }
-            }
-        }
-        if(targetTransform == null)
-        {
-            if(BuildingManager.Instance.GetHQBuilding() != null)
-            {
-                targetTransform = BuildingManager.Instance.GetHQBuilding().transform;
+                closestDistanceSqr = distanceToNewSqr;
+                targetTransform = building.transform;
             }
         }
     }
+
+    // 5. 兜底逻辑：如果范围内没找到任何建筑，就去打大本营
+    if (targetTransform == null)
+    {
+        Building hqBuilding = BuildingManager.Instance.GetHQBuilding();
+        if (hqBuilding != null)
+        {
+            targetTransform = hqBuilding.transform;
+        }
+    }
+}
+
+
 }

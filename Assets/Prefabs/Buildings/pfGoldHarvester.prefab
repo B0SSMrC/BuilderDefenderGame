@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 7224161378926288782}
   - component: {fileID: -4321640784935848745}
   - component: {fileID: 2206024463673109385}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pfGoldHarvester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,6 +233,14 @@ PrefabInstance:
       propertyPath: healthSystem
       value: 
       objectReference: {fileID: -4321640784935848745}
+    - target: {fileID: 362196739325616754, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 719465232205497116, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 979719947499447764, guid: 58b905b4563e3ba4799c330836354203, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -273,9 +281,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3871449974256316699, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374451045178849872, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326777047661383559, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6445791108883447196, guid: 58b905b4563e3ba4799c330836354203, type: 3}
       propertyPath: m_Name
       value: pfHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445791108883447196, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705795154443723980, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -311,9 +339,21 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 5.2597656
       objectReference: {fileID: 0}
+    - target: {fileID: 1359099759994559332, guid: 28af18812d407c74597053801d6a13d9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898527630791270806, guid: 28af18812d407c74597053801d6a13d9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2156701223262941850, guid: 28af18812d407c74597053801d6a13d9, type: 3}
       propertyPath: m_Name
       value: pfGoldHarvesterVisual
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156701223262941850, guid: 28af18812d407c74597053801d6a13d9, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2156701223262941851, guid: 28af18812d407c74597053801d6a13d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -355,6 +395,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4530789051544615550, guid: 28af18812d407c74597053801d6a13d9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651083683912841605, guid: 28af18812d407c74597053801d6a13d9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516176909751793203, guid: 28af18812d407c74597053801d6a13d9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7159977404740768245, guid: 28af18812d407c74597053801d6a13d9, type: 3}
       propertyPath: m_Size.x
       value: 2.2633333
@@ -381,6 +433,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6272013625744989949}
     m_Modifications:
+    - target: {fileID: 382354216597041195, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1034249679308389312, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -465,6 +521,10 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5293528677336312579, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6221859221929039511, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
       propertyPath: building
       value: 
@@ -472,6 +532,10 @@ PrefabInstance:
     - target: {fileID: 8658090384380976154, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
       propertyPath: m_Name
       value: pfBuildingDemolishBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658090384380976154, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -491,6 +555,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6272013625744989949}
     m_Modifications:
+    - target: {fileID: 382354216597041195, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1034249679308389312, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -575,9 +643,17 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5293528677336312579, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8658090384380976154, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
       propertyPath: m_Name
       value: pfBuildingRepairBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658090384380976154, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -628,6 +704,30 @@ PrefabInstance:
     - target: {fileID: 2611196194252418669, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
       propertyPath: m_Name
       value: pfResourceGeneratorOverlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611196194252418669, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5014838747843354781, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076687990528618406, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491878070993721917, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480602747863548410, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553816124468204125, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8658891520428923043, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
       propertyPath: m_LocalPosition.x

@@ -3244,7 +3244,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000d5d1a3586f939fb6
+  m_ApplyToSortingLayers: 00000000d5d1a3586f939fb6b518e267
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -3508,7 +3508,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1108460926}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 15.99449
+    OrthographicSize: 37.99996
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -5719,11 +5719,11 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 15.99449
+  orthographic size: 37.99996
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 183
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -11053,7 +11053,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1231056017
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: -20
   m_Sprite: {fileID: 21300000, guid: 793ca27a5a3378149aaa12abe85933f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6666667}
@@ -12937,7 +12937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapCenter: {x: 0, y: 0}
-  mapSize: {x: 85.6, y: 48.2}
+  mapSize: {x: 118, y: 65.8}
   hqSafeRadius: 10
   obstacleLayer:
     serializedVersion: 2
@@ -12945,21 +12945,21 @@ MonoBehaviour:
   spawnConfigs:
   - resourceName: Wood
     resourcePrefab: {fileID: 6339065757140681667, guid: ec2b918fc63e7e448a5189dcf034cc88, type: 3}
-    clusterCount: 5
+    clusterCount: 7
     minResourcesPerCluster: 9
     maxResourcesPerCluster: 11
     clusterRadius: 4
     spawnRadius: 0.00001
   - resourceName: Stone
     resourcePrefab: {fileID: 9047091488076145840, guid: 00133c3fe76ea974096137bc107bbbb7, type: 3}
-    clusterCount: 4
+    clusterCount: 5
     minResourcesPerCluster: 6
     maxResourcesPerCluster: 8
     clusterRadius: 4
     spawnRadius: 0.00001
   - resourceName: Gold
     resourcePrefab: {fileID: 2674203574210943773, guid: 3700f8b23929ed344b0d43e94c3fa3b6, type: 3}
-    clusterCount: 10
+    clusterCount: 12
     minResourcesPerCluster: 1
     maxResourcesPerCluster: 4
     clusterRadius: 4
@@ -16405,7 +16405,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1231056017
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b737d3a8ca1368a498c637d22eb3fbf2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

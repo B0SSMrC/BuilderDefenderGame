@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 9141497229684034090}
   - component: {fileID: 585393994288201704}
   - component: {fileID: -7236415158499924819}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pfStoneHarvester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,6 +229,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6272013625744989949}
     m_Modifications:
+    - target: {fileID: 382354216597041195, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1034249679308389312, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -313,9 +317,17 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5293528677336312579, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8658090384380976154, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
       propertyPath: m_Name
       value: pfBuildingRepairBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658090384380976154, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6221859221929039511, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
@@ -363,6 +375,14 @@ PrefabInstance:
       propertyPath: healthSystem
       value: 
       objectReference: {fileID: 585393994288201704}
+    - target: {fileID: 362196739325616754, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 719465232205497116, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 979719947499447764, guid: 58b905b4563e3ba4799c330836354203, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -403,9 +423,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3871449974256316699, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374451045178849872, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326777047661383559, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6445791108883447196, guid: 58b905b4563e3ba4799c330836354203, type: 3}
       propertyPath: m_Name
       value: pfHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445791108883447196, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705795154443723980, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -432,6 +472,30 @@ PrefabInstance:
     - target: {fileID: 2611196194252418669, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
       propertyPath: m_Name
       value: pfResourceGeneratorOverlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611196194252418669, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5014838747843354781, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076687990528618406, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491878070993721917, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480602747863548410, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553816124468204125, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8658891520428923043, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
       propertyPath: m_LocalPosition.x
@@ -491,6 +555,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6272013625744989949}
     m_Modifications:
+    - target: {fileID: 382354216597041195, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1034249679308389312, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -575,6 +643,10 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5293528677336312579, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6221859221929039511, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
       propertyPath: building
       value: 
@@ -582,6 +654,10 @@ PrefabInstance:
     - target: {fileID: 8658090384380976154, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
       propertyPath: m_Name
       value: pfBuildingDemolishBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658090384380976154, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -601,9 +677,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6272013625744989949}
     m_Modifications:
+    - target: {fileID: 1270287980988053169, guid: 86a6f04d74a53f84aa1a2505d21d5cd5, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137454385467768056, guid: 86a6f04d74a53f84aa1a2505d21d5cd5, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2892554008395358508, guid: 86a6f04d74a53f84aa1a2505d21d5cd5, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166171909411414931, guid: 86a6f04d74a53f84aa1a2505d21d5cd5, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5191442329625139610, guid: 86a6f04d74a53f84aa1a2505d21d5cd5, type: 3}
       propertyPath: m_Name
       value: pfStoneHarvesterVisual
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191442329625139610, guid: 86a6f04d74a53f84aa1a2505d21d5cd5, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5191442329625139611, guid: 86a6f04d74a53f84aa1a2505d21d5cd5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -653,6 +749,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 3.18
       objectReference: {fileID: 0}
+    - target: {fileID: 6690787927086421715, guid: 86a6f04d74a53f84aa1a2505d21d5cd5, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6919304873034879730, guid: 86a6f04d74a53f84aa1a2505d21d5cd5, type: 3}
       propertyPath: m_Size.x
       value: 2.2633333
@@ -660,6 +760,14 @@ PrefabInstance:
     - target: {fileID: 6919304873034879730, guid: 86a6f04d74a53f84aa1a2505d21d5cd5, type: 3}
       propertyPath: m_Size.y
       value: 3.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346741521225020205, guid: 86a6f04d74a53f84aa1a2505d21d5cd5, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483812125931111611, guid: 86a6f04d74a53f84aa1a2505d21d5cd5, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

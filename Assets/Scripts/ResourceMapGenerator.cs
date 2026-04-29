@@ -10,11 +10,11 @@ public class ResourceMapGenerator : MonoBehaviour
         public GameObject resourcePrefab; 
         
         [Header("矿脉簇 (Cluster) 聚集设置")]
-        public int clusterCount = 3; 
-        public int minResourcesPerCluster = 6;
-        public int maxResourcesPerCluster = 8;
-        public float clusterRadius = 3f; 
-        public float spawnRadius = 1.0f; 
+        public int clusterCount = 3; //簇数量
+        public int minResourcesPerCluster = 6;//每簇最少资源数量
+        public int maxResourcesPerCluster = 8;//每簇最多资源数量
+        public float clusterRadius = 3f;//簇半径，资源会在这个范围内随机分布
+        public float spawnRadius = 1.0f; //资源本身的碰撞半径（用于防重叠检测）
     }
 
     [Header("生成区域设置")]

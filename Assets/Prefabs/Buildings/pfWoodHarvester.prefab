@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4376326970881643083}
   - component: {fileID: -6770743704572002247}
   - component: {fileID: 4070953257436498892}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pfWoodHarvester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,6 +229,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6272013625744989949}
     m_Modifications:
+    - target: {fileID: 382354216597041195, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1034249679308389312, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -313,6 +317,10 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5293528677336312579, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6221859221929039511, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
       propertyPath: building
       value: 
@@ -320,6 +328,10 @@ PrefabInstance:
     - target: {fileID: 8658090384380976154, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
       propertyPath: m_Name
       value: pfBuildingDemolishBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658090384380976154, guid: a853686728e3f8d4bb8e85ff40915197, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -339,6 +351,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6272013625744989949}
     m_Modifications:
+    - target: {fileID: 382354216597041195, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1034249679308389312, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -423,9 +439,17 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5293528677336312579, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8658090384380976154, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
       propertyPath: m_Name
       value: pfBuildingRepairBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658090384380976154, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6221859221929039511, guid: 1ee8e0368594aae469bc1588c121ad10, type: 3}
@@ -476,6 +500,30 @@ PrefabInstance:
     - target: {fileID: 2611196194252418669, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
       propertyPath: m_Name
       value: pfResourceGeneratorOverlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611196194252418669, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5014838747843354781, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076687990528618406, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491878070993721917, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480602747863548410, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553816124468204125, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8658891520428923043, guid: 6b3ab317c89edc845a35efba7bcaa260, type: 3}
       propertyPath: m_LocalPosition.x
@@ -539,6 +587,14 @@ PrefabInstance:
       propertyPath: healthSystem
       value: 
       objectReference: {fileID: -6770743704572002247}
+    - target: {fileID: 362196739325616754, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 719465232205497116, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 979719947499447764, guid: 58b905b4563e3ba4799c330836354203, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -579,9 +635,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3871449974256316699, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374451045178849872, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326777047661383559, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6445791108883447196, guid: 58b905b4563e3ba4799c330836354203, type: 3}
       propertyPath: m_Name
       value: pfHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445791108883447196, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705795154443723980, guid: 58b905b4563e3ba4799c330836354203, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -601,6 +677,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6272013625744989949}
     m_Modifications:
+    - target: {fileID: 1117441441708886058, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2043955687354646454, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
       propertyPath: m_Size.x
       value: 2.194737
@@ -609,9 +689,17 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.8210526
       objectReference: {fileID: 0}
+    - target: {fileID: 2882857428626350072, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3565715747615973154, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
       propertyPath: m_Name
       value: pfWoodHarvesterVisual
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565715747615973154, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3565715747615973155, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
       propertyPath: m_LocalPosition.x
@@ -653,6 +741,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3654176723631551727, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708441840902019915, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3873768898918384280, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703551620333191105, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699968318909826122, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5854188996312701752, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963755691253267632, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6868042314099822888, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
       propertyPath: m_Size.x
       value: 1.28
@@ -665,6 +781,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 793ca27a5a3378149aaa12abe85933f4, type: 3}
+    - target: {fileID: 8202751431971537035, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8210512047125488380, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
       propertyPath: m_Size.x
       value: 2.0375
@@ -672,6 +792,14 @@ PrefabInstance:
     - target: {fileID: 8210512047125488380, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
       propertyPath: m_Size.y
       value: 2.1375
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768003391090076424, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8830041157585519028, guid: 82d226462cfac1248bf584e0aff2e534, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

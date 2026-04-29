@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 using Unity.Services.Core;
@@ -89,7 +87,7 @@ public class CloudLeaderboardManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 3. 获取并打印全球排行榜前 10 名
+    /// 3. 获取并打印全球排行榜
     /// </summary>
     public async void FetchTopLeaderboard()
     {

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Group_EnemiesAndArrow
+  m_EditorClassIdentifier: 
+  m_GroupName: Group_EnemiesAndArrow
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5a0ad8399ee8d404eb292700233387eb
+  m_SerializeEntries:
+  - m_GUID: 1bef2a2e9f2b98749875a586e5515749
+    m_Address: pfArrowProjectile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df004b4ba6237e04e93df716ecbccd4a
+    m_Address: pfEnemy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a8db04e9795dc06438308cb3179449a0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b71d006684df8dd45a4617f76c873c0b, type: 2}
+    - {fileID: 11400000, guid: 558372230db59274d9f8bf567f724c69, type: 2}
