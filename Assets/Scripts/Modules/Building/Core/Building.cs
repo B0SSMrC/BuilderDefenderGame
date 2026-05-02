@@ -18,17 +18,26 @@ public class Building : MonoBehaviour
         HideBuildingRepairBtn();
     }
 
+    private void OnEnable()
+    {
+        healthSystem.OnDamaged += HealthSystem_OnDamaged;
+        healthSystem.OnHealed += HealthSystem_OnHealed;
+        healthSystem.OnDied += HealthSystem_OnDied;
+    }
+
     private void Start()
     {
         buildingType = GetComponent<BuildingTypeHolder>().buildingType;
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.SetHealthAmountMax(buildingType.healthAmountMax,true);
-        
-        healthSystem.OnDamaged += HealthSystem_OnDamaged;
-        healthSystem.OnHealed += HealthSystem_OnHealed;
-        healthSystem.OnDied += HealthSystem_OnDied;
 
+    }
 
+    private void OnDisable()
+    {
+        healthSystem.OnDamaged -= HealthSystem_OnDamaged;
+        healthSystem.OnHealed -= HealthSystem_OnHealed;
+        healthSystem.OnDied -= HealthSystem_OnDied;
     }
 
     private void HealthSystem_OnHealed(object sender, EventArgs e)

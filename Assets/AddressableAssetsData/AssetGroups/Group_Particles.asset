@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Group_Particles
+  m_EditorClassIdentifier: 
+  m_GroupName: Group_Particles
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 475e6edf0c829f4488230d103f16a6d0
+  m_SerializeEntries:
+  - m_GUID: 6042c6488dcc7bf41916074e23749783
+    m_Address: Assets/Particles/pfBuildingPlacedParticles.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a5366301b0787e4f849d3c90a0f2f5f
+    m_Address: Assets/Particles/pfBuildingDestroyedParticles.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8af379fa2daf4474799218a7fabd0659
+    m_Address: Assets/Particles/pfEnemyDieParticles.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a8db04e9795dc06438308cb3179449a0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 59b303b57df725e47a18a55fc27d56c7, type: 2}
+    - {fileID: 11400000, guid: 50f15684e7073f5479b4eef925d94175, type: 2}

@@ -22,9 +22,20 @@ public class Enemy : MonoBehaviour
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         healthSystem = GetComponent<HealthSystem>();
+        
+
+    }
+
+    private void OnEnable()
+    {
         healthSystem.OnDamaged += HealthSystem_OnDamaged;
         healthSystem.OnDied += HealthSystem_OnDied;
+    }
 
+    private void OnDisable()
+    {
+        healthSystem.OnDamaged -= HealthSystem_OnDamaged;
+        healthSystem.OnDied -= HealthSystem_OnDied;
     }
 
     public void Init()
@@ -117,7 +128,7 @@ private void LookForTargets()
 
     targetTransform = null; // 每次索敌前清空目标
     float closestDistanceSqr = float.MaxValue; // 记录当前发现的最短距离
-    Vector3 currentPosition = transform.position; // 缓存自身坐标，减少跨 C++/C# 底层调用
+    Vector3 currentPosition = transform.position; // 缓存自身坐标
 
     // 2. 只遍历实际扫到的数量
     for (int i = 0; i < hitCount; i++)
