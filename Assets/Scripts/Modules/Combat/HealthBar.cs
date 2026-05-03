@@ -13,17 +13,28 @@ public class HealthBar : MonoBehaviour
     private void Awake()
     {
         barTransform = transform.Find("bar");
+        separatorContainer = transform.Find("separatorContainer");
+    }
+
+    private void OnEnable()
+    {
+        healthSystem.OnDamaged += HealthSystem_OnDamaged;
+        healthSystem.OnHealed += HealthSystem_OnHealed;
+        healthSystem.OnHealthAmountMaxChanged += HealthSystem_OnHealthAmountMaxChanged;
     }
 
     private void Start()
     {
-        separatorContainer = transform.Find("separatorContainer");
         ConstructHealthBarSeparators();
-        healthSystem.OnDamaged += HealthSystem_OnDamaged;
-        healthSystem.OnHealed += HealthSystem_OnHealed;
-        healthSystem.OnHealthAmountMaxChanged += HealthSystem_OnHealthAmountMaxChanged;
         UpdateBar();
         UpdateHealthBarVisible();
+    }
+
+    private void OnDisable()
+    {
+        healthSystem.OnDamaged -= HealthSystem_OnDamaged;
+        healthSystem.OnHealed -= HealthSystem_OnHealed;
+        healthSystem.OnHealthAmountMaxChanged -= HealthSystem_OnHealthAmountMaxChanged;
     }
 
     private void HealthSystem_OnHealthAmountMaxChanged(object sender, EventArgs e)

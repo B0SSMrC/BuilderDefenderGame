@@ -20,18 +20,14 @@ public class Building : MonoBehaviour
 
     private void OnEnable()
     {
+        buildingType = GetComponent<BuildingTypeHolder>().buildingType;
+        healthSystem = GetComponent<HealthSystem>();
+        healthSystem.SetHealthAmountMax(buildingType.healthAmountMax,true);
         healthSystem.OnDamaged += HealthSystem_OnDamaged;
         healthSystem.OnHealed += HealthSystem_OnHealed;
         healthSystem.OnDied += HealthSystem_OnDied;
     }
 
-    private void Start()
-    {
-        buildingType = GetComponent<BuildingTypeHolder>().buildingType;
-        healthSystem = GetComponent<HealthSystem>();
-        healthSystem.SetHealthAmountMax(buildingType.healthAmountMax,true);
-
-    }
 
     private void OnDisable()
     {
