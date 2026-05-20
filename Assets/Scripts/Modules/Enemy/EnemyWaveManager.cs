@@ -37,6 +37,11 @@ public class EnemyWaveManager : MonoBehaviour
             Debug.LogError("错误：没有为 EnemyWaveManager 配置 LevelConfigSO！");
             return;
         }
+        if (currentLevelConfig.waves.Count == 0)  // 新增
+        {
+            Debug.LogError("错误：LevelConfigSO 的波次列表为空！");
+            return;
+        }
         state = State.WaitingToSpawnNextWave;
         spawnPosition = GetRandomSpawnPosition();
         nextWavePositionTransform.position = spawnPosition;
@@ -85,6 +90,11 @@ public class EnemyWaveManager : MonoBehaviour
     {
         
         
+        if (waveNumber >= currentLevelConfig.waves.Count)
+        {
+            state = State.LevelCompleted;
+            return;
+        }
         remainingEnemySpawnAmount = currentLevelConfig.waves[waveNumber].enemyCount;
         state = State.SpawningWave;
         waveNumber++;
@@ -124,9 +134,15 @@ public class EnemyWaveManager : MonoBehaviour
         this.nextWaveSpawnTimer = nextTimer;
         this.spawnPosition = spawnPos;
         this.nextWavePositionTransform.position = spawnPosition;
-        
-        // 强制重置为等待状态，避免读档时处于刷怪中导致逻辑错乱
-        state = State.WaitingToSpawnNextWave; 
+
+        if (waveNum >= currentLevelConfig.waves.Count)
+        {
+            state = State.LevelCompleted;
+        }
+        else
+        {
+            state = State.WaitingToSpawnNextWave;
+        }
         OnWaveNumberChanged?.Invoke(this, EventArgs.Empty);
     }
 }

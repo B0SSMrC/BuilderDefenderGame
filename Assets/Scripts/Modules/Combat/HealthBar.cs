@@ -9,11 +9,15 @@ public class HealthBar : MonoBehaviour
 
     private Transform barTransform;
     private Transform separatorContainer;
+    private Transform backgroundTransform;
+    private Transform barBackgroundtransform;
 
     private void Awake()
     {
         barTransform = transform.Find("bar");
         separatorContainer = transform.Find("separatorContainer");
+        backgroundTransform = transform.Find("background");
+        barBackgroundtransform = transform.Find("barBackground");
     }
 
     private void OnEnable()
@@ -86,13 +90,10 @@ public class HealthBar : MonoBehaviour
 
     private void UpdateHealthBarVisible()
     {
-        if (healthSystem.IsFullHealth())
-        {
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            gameObject.SetActive(true);
-        }
+        bool shouldShow = !healthSystem.IsFullHealth();
+        barTransform.gameObject.SetActive(shouldShow);
+        separatorContainer.gameObject.SetActive(shouldShow);
+        backgroundTransform.gameObject.SetActive(shouldShow);
+        barBackgroundtransform.gameObject.SetActive(shouldShow);
     }
 }

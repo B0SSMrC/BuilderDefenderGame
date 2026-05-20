@@ -17,10 +17,7 @@ MonoBehaviour:
   waves:
   - enemyCount: 5
     spawnInterval: 0.01
-    timeToNextWave: 10
-  - enemyCount: 7
-    spawnInterval: 0.1
-    timeToNextWave: 10
-  - enemyCount: 10
-    spawnInterval: 0.1
-    timeToNextWave: 10
+    timeToNextWave: 2
+  - enemyCount: 5
+    spawnInterval: 0.01
+    timeToNextWave: 2
