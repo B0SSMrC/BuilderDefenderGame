@@ -21,3 +21,6 @@ MonoBehaviour:
   - enemyCount: 5
     spawnInterval: 0.01
     timeToNextWave: 2
+  - enemyCount: 7
+    spawnInterval: 0.1
+    timeToNextWave: 5

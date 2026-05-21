@@ -16,6 +16,9 @@ public class GameSaveData
 
     [Header("建筑数据")]
     public List<BuildingSaveData> buildingSaveList = new List<BuildingSaveData>();
+
+    [Header("资源节点数据")]
+    public List<ResourceNodeSaveData> resourceNodeList = new List<ResourceNodeSaveData>();
 }
 
 [System.Serializable]
@@ -31,4 +34,11 @@ public class BuildingSaveData
     public string buildingTypeName; // 使用 BuildingTypeSO 的名字
     public Vector3 position;
     public int currentHealth;
+}
+
+[System.Serializable]
+public class ResourceNodeSaveData
+{
+    public string resourceTypeName;
+    public Vector3 position;
 }

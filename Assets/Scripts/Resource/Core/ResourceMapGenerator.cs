@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ResourceMapGenerator : MonoBehaviour
 {
+    public static ResourceMapGenerator Instance { get; private set; }
     [System.Serializable]
     public class ResourceSpawnConfig
     {
@@ -31,12 +32,20 @@ public class ResourceMapGenerator : MonoBehaviour
     [Header("资源配置")]
     public List<ResourceSpawnConfig> spawnConfigs;
 
-    private void Start()
+    private void Awake()
     {
-        GenerateResources();
+        Instance = this;
     }
 
-    private void GenerateResources()
+    private void Start()
+    {
+        if (!SaveManager.IsLoadingGame)
+        {
+            GenerateResources();
+        }
+    }
+
+    public void GenerateResources()
     {
         foreach (var config in spawnConfigs)
         {
@@ -92,6 +101,38 @@ public class ResourceMapGenerator : MonoBehaviour
         } while (IsPositionInSafeZone(pos) && attempts < 100);
 
         return pos;
+    }
+
+    public void RestoreResourceNodes(List<ResourceNodeSaveData> savedNodes)
+    {
+        // 清空当前所有资源节点（包括 Start 时可能已经生成的）
+        ResourceNode[] existing = GetComponentsInChildren<ResourceNode>();
+        foreach (var node in existing)
+        {
+            Destroy(node.gameObject);
+        }
+
+        // 按存档逐个还原
+        foreach (var data in savedNodes)
+        {
+            GameObject prefab = GetPrefabByResourceName(data.resourceTypeName);
+            if (prefab != null)
+            {
+                Instantiate(prefab, data.position, Quaternion.identity, transform);
+            }
+        }
+    }
+
+    private GameObject GetPrefabByResourceName(string resourceName)
+    {
+        foreach (var config in spawnConfigs)
+        {
+            if (config.resourceName == resourceName)
+            {
+                return config.resourcePrefab;
+            }
+        }
+        return null;
     }
 
     // 检查是否在避让范围内

@@ -6,6 +6,8 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance { get; private set; }
 
+    public static bool IsLoadingGame { get; private set; }
+
     private string savePath;
 
     private void Awake()
@@ -13,13 +15,14 @@ public class SaveManager : MonoBehaviour
         Instance = this;
         // 设定存档绝对路径
         savePath = Application.persistentDataPath + "/savegame.json";
+
+        // 在 Awake 就确定是否读档，确保其他脚本 Start 时能读到这个状态
+        IsLoadingGame = PlayerPrefs.GetInt("ContinueGame", 0) == 1;
     }
 
     private void Start()
     {
-        // 检查主菜单通过 PlayerPrefs 传来的暗号
-        // 默认值设为 0（新游戏），防止在编辑器里直接测试 GameScene 时报错
-        if (PlayerPrefs.GetInt("ContinueGame", 0) == 1)
+        if (IsLoadingGame)
         {
             Debug.Log("收到指令：继续游戏，正在读取存档...");
             LoadGame();
@@ -46,8 +49,20 @@ public class SaveManager : MonoBehaviour
         data.nextWaveSpawnTimer = EnemyWaveManager.Instance.GetNextWaveSpawnTimer();
         data.nextSpawnPosition = EnemyWaveManager.Instance.GetSpawnPosition();
 
-        // 2. 收集资源数据
+        // 2. 收集资源数量数据
         data.resourceSaveList = ResourceManager.Instance.GetResourceSaveData();
+
+        // 2.1  收集资源节点（地图上的矿、树等）
+        data.resourceNodeList = new List<ResourceNodeSaveData>();
+        ResourceNode[] allNodes = FindObjectsOfType<ResourceNode>();
+        foreach (ResourceNode node in allNodes)
+        {
+            data.resourceNodeList.Add(new ResourceNodeSaveData
+            {
+                resourceTypeName = node.resourceType.name,
+                position = node.transform.position
+            });
+        }
 
         // 3. 收集场上所有建筑数据 (利用 FindObjectsOfType 找到所有建筑)
         Building[] allBuildings = FindObjectsOfType<Building>();
@@ -77,7 +92,8 @@ public class SaveManager : MonoBehaviour
     {
         if (!File.Exists(savePath))
         {
-            Debug.Log("未找到存档，开始新游戏。");
+            Debug.LogWarning("未找到存档，回退为新游戏！");
+            ResourceMapGenerator.Instance.GenerateResources();
             return;
         }
 
@@ -92,6 +108,17 @@ public class SaveManager : MonoBehaviour
 
         // 3. 恢复建筑数据
         RestoreBuildings(data.buildingSaveList);
+
+        // 4. 恢复资源节点
+        if (data.resourceNodeList != null && data.resourceNodeList.Count > 0)
+        {
+            ResourceMapGenerator.Instance.RestoreResourceNodes(data.resourceNodeList);
+        }
+        else
+        {
+            // 旧存档没有资源节点数据，回退随机生成
+            ResourceMapGenerator.Instance.GenerateResources();
+        }
 
         Debug.Log("读档成功！");
         // 通知玩家读取成功
